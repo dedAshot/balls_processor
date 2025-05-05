@@ -9,7 +9,7 @@ import (
 
 func main() {
 	input := bufio.NewReader(os.Stdin)
-	in := Reader(input)
+	in := Read(input)
 	valid := Validate(in)
 
 	if valid {
@@ -19,7 +19,7 @@ func main() {
 	}
 }
 
-func Reader(in io.Reader) [][]int {
+func Read(in io.Reader) [][]int {
 	var N int
 	fmt.Fscan(in, &N)
 

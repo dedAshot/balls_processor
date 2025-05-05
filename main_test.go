@@ -108,7 +108,7 @@ func TestValidate(t *testing.T) {
 	}
 }
 
-func TestReader(t *testing.T) {
+func TestRead(t *testing.T) {
 	tests := map[string]struct {
 		in    string
 		exout [][]int
@@ -138,7 +138,7 @@ func TestReader(t *testing.T) {
 	for name, test := range tests {
 		t.Run(name, func(t *testing.T) {
 			reader := bufio.NewReader(strings.NewReader(test.in))
-			out := Reader(reader)
+			out := Read(reader)
 
 			if !slices.EqualFunc(test.exout, out, func(ex, out []int) bool {
 				return slices.Equal(ex, out)
