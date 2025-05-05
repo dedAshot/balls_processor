@@ -43,6 +43,14 @@ func TestValidate(t *testing.T) {
 			},
 			exout: true,
 		},
+		"success: empty 3rd container": {
+			in: [][]int{
+				{1, 2},
+				{2, 1},
+				{0, 0},
+			},
+			exout: true,
+		},
 		"fail: more containers with cap than colours": {
 			in: [][]int{
 				{1},
@@ -50,14 +58,6 @@ func TestValidate(t *testing.T) {
 				{1},
 			},
 			exout: false,
-		},
-		"fail: ": {
-			in: [][]int{
-				{1, 2},
-				{2, 1},
-				{0, 0},
-			},
-			exout: true,
 		},
 		"fail: multiple colours in one container": {
 			in: [][]int{
